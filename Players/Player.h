@@ -2,11 +2,24 @@
 #pragma once
 
 #include <string>
+#include "Character.h"
 
 using std::string;
 
 class Player {
+
+    Character* m_Character;
 public:
+
+    Player()=delete;
+    Player(Character* character): m_Character(character){}
+    ~Player();
+
+    bool Encounter(int MonsterPower, int MonsterLoot, int MonsterDamage);
+    int buyPotions(int cost, int HealingPoints);
+    int Eclipse();
+    bool isKnockedOut() const;
+
     /**
      * Gets the description of the player
      *
