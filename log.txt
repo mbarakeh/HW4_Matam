@@ -1,0 +1,73 @@
+* commit be04558d5659506e2fbdf101d3955e9e85d5fa32
+| Author: moham <mbarakeh@campus.technion.ac.il>
+| Date:   Sun Jan 26 13:04:38 2025 +0200
+| 
+|     passed the tests
+| 
+|  Events/Encounter.cpp    | 115 ++++++++++++++++++++++
+|  Events/Encounter.h      |  75 +++++++++++++++
+|  Events/Event.cpp        |   3 +
+|  Events/Event.h          |  10 +-
+|  Events/SpecialEvent.cpp |  22 +++++
+|  Events/SpecialEvent.h   |  46 +++++++++
+|  MatamStory.cpp          | 236 ++++++++++++++++++++++++++++++++++++++++------
+|  MatamStory.h            |  27 +++++-
+|  Players/Character.cpp   |   2 +-
+|  9 files changed, 502 insertions(+), 34 deletions(-)
+| 
+* commit 47fa75c452cfc5691409f0fc6849195b9699fb5b
+| Author: moham <mbarakeh@campus.technion.ac.il>
+| Date:   Sat Jan 25 19:07:07 2025 +0200
+| 
+|     added job and Character(behaviour is there) classes and finished Player class implemntation
+| 
+|  Players/Character.cpp |  82 +++++++++++++++++++++++++++++++++
+|  Players/Character.h   |  53 ++++++++++++++++++++++
+|  Players/Job.cpp       | 117 ++++++++++++++++++++++++++++++++++++++++++++++++
+|  Players/Job.h         |  70 +++++++++++++++++++++++++++++
+|  Players/Player.cpp    |  49 ++++++++++++++++++++
+|  Players/Player.h      |  13 ++++++
+|  6 files changed, 384 insertions(+)
+| 
+* commit 36e0a570a1ae4093ddf45c2cac7bd6665f8ac175
+| Author: Yinon Goldshtein <yinongold@gmail.com>
+| Date:   Wed Jan 8 19:52:22 2025 +0200
+| 
+|     updated course number in README
+| 
+|  README.md | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit 11db499619ae45b95224312022c5e0459653edcd
+| Author: Egbaria Mohammad-Baraa <102754795+EgbariaMohammad@users.noreply.github.com>
+| Date:   Wed Jan 8 19:48:30 2025 +0200
+| 
+|     Update README.md
+| 
+|  README.md | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+| 
+* commit 89b5f6299cabd5cfeb30a0873786055da6280436
+  Author: Yinon Goldshtein <yinongold@gmail.com>
+  Date:   Tue Jan 7 01:02:53 2025 +0200
+  
+      initial commit
+  
+   Events/Event.h       |  14 +++++
+   MatamStory.cpp       |  74 +++++++++++++++++++++++++
+   MatamStory.h         |  55 +++++++++++++++++++
+   Players/Player.h     |  51 +++++++++++++++++
+   README.md            |   7 +++
+   Utilities.cpp        | 117 +++++++++++++++++++++++++++++++++++++++
+   Utilities.h          | 146 +++++++++++++++++++++++++++++++++++++++++++++++++
+   main.cpp             |  40 ++++++++++++++
+   tests/test1.events   |   5 ++
+   tests/test1.expected |  96 ++++++++++++++++++++++++++++++++
+   tests/test1.players  |   3 +
+   tests/test2.events   |   4 ++
+   tests/test2.expected |   1 +
+   tests/test2.players  |   3 +
+   tests/test3.events   |   5 ++
+   tests/test3.expected |   1 +
+   tests/test3.players  |   2 +
+   17 files changed, 624 insertions(+)
