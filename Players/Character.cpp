@@ -47,7 +47,7 @@ int Character::Eclipse() {
 string Character::CreateMessage() {
     string message= m_Job->getName() + ", " + m_Job->getJobDescription() + " with " + getCharacterDescription()
                     + " character (level " + std::to_string(m_Job->getLevel()) + ", force " +
-                    std::to_string(m_Job->getForce()) + ")" ; /// no endLine
+                    std::to_string(m_Job->getForce()) + ")" ;
     return message;
 }
 

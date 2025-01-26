@@ -1,7 +1,7 @@
-
 #pragma once
 
 #include "../Players/Player.h"
+#include <memory>
 
 class Event {
 public:
@@ -10,5 +10,9 @@ public:
      *
      * @return - the description of the event
     */
-    string getDescription() const;
+    virtual string getDescription() const=0;
+
+    Event()=default;
+    virtual ~Event()=default;
+    virtual void EncounterEvent(std::shared_ptr<Player> player)=0;
 };
