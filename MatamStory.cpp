@@ -94,8 +94,7 @@ void MatamStory::ReadPlayers(std::istream &playersStream) {
         for (char i : PlayerName) {
             if ( !isalpha(i))
                 throw std::runtime_error("Invalid Players File");
-        }
-        m_numberOfPlayers++;
+        }        m_numberOfPlayers++;
         Job* newJob = CreateJob(PlayerName ,JobName);
         Character* newCharacter= CreateCharacter(CharacterName,newJob);
         std::shared_ptr<Player> newPlayer= std::make_shared<Player>(newCharacter);
