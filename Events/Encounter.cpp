@@ -66,7 +66,7 @@ Pack::~Pack() {
 }
 
 string Pack::getDescription() const {
-    string Message= "Pack of " + std::to_string(m_size) + " members (power " +
+    string Message= "Pack of " + std::to_string(m_addedCount) + " members (power " +
                     std::to_string(getStrengthWithoutUpdate()) + ", loot " + std::to_string(getLoot()) + ", damage " +
                     std::to_string(getDamage()) + ")";
     return Message;
