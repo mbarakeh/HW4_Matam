@@ -21,7 +21,7 @@ public:
     virtual void EncounterEvent(std::shared_ptr<Player> player) override ;
     virtual string getDescription() const override ;
     virtual string getType() const =0;
-
+    virtual int getCount()const;
     virtual int getStrength();
     virtual int getStrengthWithoutUpdate() const;
     virtual int getLoot() const;
@@ -54,22 +54,33 @@ public:
     string getType() const override;
 };
 
-class Pack:public Monster{
-    std::shared_ptr<Monster> * m_array;
+class Pack:public Monster {
+    std::shared_ptr<Monster> *m_array;
     int m_size;
     int m_addedCount;
 public:
-    Pack(int size): Monster(), m_array(new std::shared_ptr<Monster>  [size]()), m_size(size), m_addedCount(0){}
+    Pack(int size)
+            : Monster(), m_array(new std::shared_ptr<Monster>[size]()),
+              m_size(size), m_addedCount(0) {}
+
     virtual ~Pack();
 
     string getDescription() const override;
+
     void Add(std::shared_ptr<Monster> MonsterPtr);
+
+    int getNumOfMonsters() const;
+
     int getStrength() override;
+
     int getLoot() const override;
+
     int getDamage() const override;
+
     int getStrengthWithoutUpdate() const override;
+
     string getType() const override;
 
+    int getCount() const override;
 };
-
 #endif //HW4_MATAM_ENCOUNTER_H

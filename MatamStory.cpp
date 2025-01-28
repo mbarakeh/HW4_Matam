@@ -21,7 +21,6 @@ std::shared_ptr<Monster> MatamStory::MonsterInventer(std::string &EventName, std
         string EventInPack;
         for(int i=0;i<sizeOfPack;i++){
             if (eventsStream >> EventInPack){
-
             }
             else{
                 throw std::runtime_error("Invalid Events File");
@@ -92,6 +91,10 @@ void MatamStory::ReadPlayers(std::istream &playersStream) {
 
     while((playersStream >> PlayerName )&& (playersStream >> JobName)&& (playersStream >> CharacterName) ){
         if (PlayerName.size()<3||PlayerName.size()>15) throw std::runtime_error("Invalid Players File");
+        for (char i : PlayerName) {
+            if ( !isalpha(i))
+                throw std::runtime_error("Invalid Players File");
+        }
         m_numberOfPlayers++;
         Job* newJob = CreateJob(PlayerName ,JobName);
         Character* newCharacter= CreateCharacter(CharacterName,newJob);

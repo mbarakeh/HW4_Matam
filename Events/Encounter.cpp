@@ -20,6 +20,9 @@ void Monster::EncounterEvent(std::shared_ptr<Player> player) {
 int Monster::getStrength() {
     return this->m_strength;
 }
+int Monster::getCount() const {
+    return 1;
+}
 
 int Monster::getLoot() const {
     return m_loot;
@@ -66,7 +69,7 @@ Pack::~Pack() {
 }
 
 string Pack::getDescription() const {
-    string Message= "Pack of " + std::to_string(m_addedCount) + " members (power " +
+    string Message= "Pack of " + std::to_string(getNumOfMonsters()) + " members (power " +
                     std::to_string(getStrengthWithoutUpdate()) + ", loot " + std::to_string(getLoot()) + ", damage " +
                     std::to_string(getDamage()) + ")";
     return Message;
@@ -85,7 +88,6 @@ int Pack::getStrength() {
     return overAllStrength;
 }
 
-
 int Pack::getLoot() const {
     int overAllLoot=0;
     for(int i=0;i<m_size;i++){
@@ -100,6 +102,9 @@ int Pack::getDamage() const{
         overAllDamage+=m_array[i]->getDamage();
     }
     return overAllDamage;
+
+}int Pack::getCount() const {
+    return getNumOfMonsters();
 }
 
 int Pack::getStrengthWithoutUpdate() const {
@@ -112,4 +117,12 @@ int Pack::getStrengthWithoutUpdate() const {
 
 string Pack::getType() const {
     return "Pack";
+}
+
+int Pack::getNumOfMonsters() const {
+    int counter = 0;
+    for (int i=0;i<m_size;i++){
+        counter+= m_array[i]->getCount();
+    }
+    return counter;
 }
